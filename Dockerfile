@@ -11,7 +11,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
     apt install apt-transport-https && \
     echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list && \
     apt-get update -q && \
-    apt-get install -qy libmono-cil-dev libcurl4-openssl-dev && \
+    apt-get install -qy mono-devel ca-certificates-mono libcurl4-openssl-dev && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
