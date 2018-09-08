@@ -16,7 +16,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
     rm -rf /tmp/* 
 	
 RUN cd /opt && \
-    curl -L -O $( curl -s https://github.com/Jackett/Jackett/releases | grep Jackett.Binaries.Mono.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 ) && \
+    curl -L -O $( curl -s https://api.github.com/repos/Jackett/Jackett/releases | grep Jackett.Binaries.Mono.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 ) && \
 	tar -xvzf Jackett.Binaries.Mono.tar.gz
 
 RUN mkdir -p /volumes/config && \
