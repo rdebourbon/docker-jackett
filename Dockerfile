@@ -1,6 +1,9 @@
 FROM rdebourbon/docker-base:latest
 MAINTAINER rdebourbon@xpandata.net
 
+ENV XDG_DATA_HOME="/volumes/config" \
+    XDG_CONFIG_HOME="/volumes/config"
+
 # add our user and group first to make sure their IDs get assigned regardless of what other dependencies may get added.
 RUN groupadd -r librarian && useradd -r -g librarian librarian
 
